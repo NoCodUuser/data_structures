@@ -59,6 +59,11 @@ int Int_Vector::operator[](int _index) const
 
 void Int_Vector::push_back(int _number)
 {
+    if(m_count_push_back  >= m_size)
+    {
+        allocate(m_count_push_back * 2);
+    }
+
     m_array[m_count_push_back] = _number;
     m_count_push_back += 1;
 }
@@ -67,8 +72,6 @@ void Int_Vector::pop_back()
 {
     m_count_push_back -= 1;
 }
-
-
 
 
 void print(const Int_Vector& _vector)
