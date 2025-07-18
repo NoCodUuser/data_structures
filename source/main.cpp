@@ -7,13 +7,16 @@ int main()
     Int_Vector vector;
 
     vector.allocate(8);
-    vector[0] = 10;
-    vector[1] = 10;
-    vector[2] = 10;
-    vector[3] = 10;
 
-    vector.allocate(8);
+    vector.push_back(7);
+    vector.push_back(3);
+    vector.push_back(6);
+    vector.push_back(9);
 
-    vector.print();
+    vector.pop_back();
+
+    vector.push_back(7);
+
+    print(vector);
 
 }
